@@ -1,15 +1,5 @@
 # kickstart.nvim
 
-## Introduction
-
-A starting point for Neovim that is:
-
-* Small
-* Single-file
-* Completely Documented
-
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
-
 ## Installation
 
 ### Install Neovim
@@ -28,7 +18,7 @@ External Requirements:
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
 - Language Setup:
-  - If want to write Typescript, you need `npm`
+  - If want to write Typescript, you need `npm` npm needs to be 20+ can use this ['link'](https://joshtronic.com/2023/04/23/how-to-install-nodejs-20-on-ubuntu-2004-lts/) this is needed for pyright
   - If want to write Golang, you will need `go`
   - etc.
 
@@ -57,7 +47,7 @@ fork to your machine using one of the commands below, depending on your OS.
 
 > **NOTE**
 > Your fork's url will be something like this:
-> `https://github.com/<your_github_username>/kickstart.nvim.git`
+> `https://github.com/garrett2532/kickstart.nvim.git`
 
 #### Clone kickstart.nvim
 > **NOTE**
@@ -66,8 +56,10 @@ fork to your machine using one of the commands below, depending on your OS.
 
 <details><summary> Linux and Mac </summary>
 
+Delete any nvim config `rm -rf ~/.local/share/nvim/` and `rm -rf ~/.config/nvim` This will get rid of existing neovim config so backup if needed. 
+
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/garrett2532/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -77,18 +69,24 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git %userprofile%\AppData\Local\nvim\
+git clone https://github.com/garrett2532/kickstart.nvim.git %userprofile%\AppData\Local\nvim\
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\
+git clone https://github.com/garrett2532/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\
 ```
 
 </details>
 
 ### Post Installation
+
+Be sure to update python path in the `lua/custom/plugins/nvim-dap-python.lua` this is for debugging 
+
+make sure that `debugpy` is installed in that same python
+
+If there are versioning issues you can use the command :Lazy restore to restore from the lazy_lock.json file
 
 Start Neovim
 
